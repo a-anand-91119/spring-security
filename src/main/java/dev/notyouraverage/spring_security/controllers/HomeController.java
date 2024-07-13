@@ -17,16 +17,26 @@ public class HomeController {
     }
 
     @GetMapping
+    public String home() {
+        return "HOME PAGE";
+    }
+
+    @GetMapping("/session")
     public String home(Principal principal, HttpSession session) {
         log.info(principal.toString());
         homeViewCountService.incrementViewCount(session);
-        return "OK";
+        return "TRACKED COUNT";
     }
 
     @GetMapping("/count")
     public String getCount(HttpSession session) {
         Integer currentViewCount = homeViewCountService.getCurrentViewCount(session);
         return "Current Home View Count %d".formatted(currentViewCount);
+    }
+
+    @GetMapping("/secured")
+    public String secured() {
+        return "Secured Home View";
     }
 
 }

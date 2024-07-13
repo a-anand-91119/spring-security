@@ -17,6 +17,15 @@ spring:
           google:
             client-id: ${OAUTH_GOOGLE_CLIENT_ID}
             client-secret: ${OAUTH_GOOGLE_CLIENT_SECRET}
+    user:
+      password: password
+  # Spring Data
+  datasource:
+    generate-unique-name: false
+    name: blog
+  h2:
+    console:
+      enabled: true
 
 # Enabling trace for spring security for better traceability
 logging:
