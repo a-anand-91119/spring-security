@@ -4,3 +4,23 @@ spring:
       lifecycle-management: start_only
   application:
     name: Spring Security
+  # Spring Security
+  security:
+    oauth2:
+      client:
+        registration:
+          # GitHub Login
+          github:
+            client-id: ${OAUTH_GITHUB_CLIENT_ID}
+            client-secret: ${OAUTH_GITHUB_CLIENT_SECRET}
+          # Google Login
+          google:
+            client-id: ${OAUTH_GOOGLE_CLIENT_ID}
+            client-secret: ${OAUTH_GOOGLE_CLIENT_SECRET}
+
+# Enabling trace for spring security for better traceability
+logging:
+  level:
+    org:
+      springframework:
+        security: TRACE

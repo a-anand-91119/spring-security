@@ -1,9 +1,8 @@
 package dev.notyouraverage.spring_security.controllers;
 
-import java.security.Principal;
-
 import dev.notyouraverage.spring_security.services.HomeViewCountService;
 import jakarta.servlet.http.HttpSession;
+import java.security.Principal;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Slf4j
 public class HomeController {
-
     private final HomeViewCountService homeViewCountService;
 
     public HomeController(HomeViewCountService homeViewCountService) {
